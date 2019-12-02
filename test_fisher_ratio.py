@@ -52,3 +52,20 @@ new_df3 = scale_xy(df3, label_y="group")
 
 print("\nscaled data\n", new_df3)
 print("\nfisher ratio scaled:", fisher_ratio(new_df3))
+
+
+aux_array4 = np.concatenate([np.arange(0, 10), np.arange(0, 100) + 100, np.arange(0, 1000)*2 + 1000])
+aux_groups4 = ["a"]*10 + ["b"]*100 + ["c"]*1000
+
+
+df4 = pd.DataFrame({"dim1": 1.0*aux_array4,
+                    "dim2": 1.0*aux_array4,
+                    "group": aux_groups4})
+
+print("\nunscaled data\n", df4)
+print("\nfisher ratio unscaled:", fisher_ratio(df4))
+
+new_df4 = scale_xy(df4, label_y="group")
+
+print("\nscaled data\n", new_df4)
+print("\nfisher ratio scaled:", fisher_ratio(new_df4))
